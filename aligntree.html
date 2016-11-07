@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bioinformatics by tethig</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Bioinformatics</h1>
+        <h2 class="project-tagline">Dr Dickins Bioinformatics Teaching</h2>
+        <a href="https://github.com/tethig/bioinformatics" class="btn">View on GitHub</a>
+        <a href="https://github.com/tethig/bioinformatics/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/tethig/bioinformatics/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+        <h1>
+<a id="biol33221-sequence-retrieval-and-alignment" class="anchor" href="#biol33221-sequence-retrieval-and-alignment" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BIOL33221 Sequence Retrieval and Alignment</h1>
+        <p>This <em>formative</em> exercise includes production of a short report.</p>
+        <h2 id="pre-requisites">Pre-requisites</h2>
+        <p>While not strictly required, it is useful to have a professional text editor. Notepad (on Windows) or TextEdit (on Mac) tend to correct spelling. This is <strong>not</strong> something we want when handling sequences.</p>
+        <p>If you are using an NTU PC, I recommend launching an instance of &quot;Notepad++&quot; via NTU&#39;s Software Centre (icon on Desktop). If you are using your own PC you can get it <a href="https://notepad-plus-plus.org">here</a>. On MacOS I recommend
+            <a href="http://www.barebones.com/products/textwrangler/">TextWrangler</a> or, for the programmers among you, <a href="https://atom.io">Atom</a>.</p>
+        <h2 id="choose-a-gene">Choose a Gene</h2>
+        <p>Pick one of the genes from this list:</p>
+        <ul>
+            <li>A4GALT</li>
+            <li>FBXO31</li>
+            <li>KIF1A</li>
+            <li>AAA1</li>
+            <li>FBXO44</li>
+            <li>LPPR2</li>
+            <li>AHI1</li>
+            <li>FTO</li>
+            <li>NMNAT2</li>
+            <li>ARHGEF6</li>
+            <li>GAS7</li>
+            <li>NRL</li>
+            <li>AVPR2</li>
+            <li>GDAP2</li>
+            <li>NRSN2</li>
+            <li>C1orf36</li>
+            <li>GJB3</li>
+            <li>PSEN2</li>
+            <li>CACNA1G</li>
+            <li>GUCA1B</li>
+            <li>TCF2</li>
+            <li>CACNA2D4</li>
+            <li>HNF4A</li>
+            <li>TDP1</li>
+            <li>FBXO18</li>
+            <li>HYAL1</li>
+        </ul>
+        <p>Start a new document in your preferred word processing package and note down the gene you have chosen. This is your report for this workshop.</p>
+        <h2 id="sequence-retrieval">Sequence Retrieval</h2>
+        <p>The aim of this first task is to determine what information you can find about your gene, starting from the gene page. Use <a href="http://www.ncbi.nlm.nih.gov/">Entrez Pubmed</a> to query Gene db.</p>
+        <p>Select the link for the gene from any mammal (human and mouse will be found most frequently). From the gene page see what information you can determine, either directly or by following links. (You may also wish to record the URL for this page).</p>
+        <p>This information can include accession numbers for mRNA and protein sequences, transcript length, protein length, number of exons, length of genomic region occupied by the gene, function of the protein and disease association.</p>
+        <p>Compile this information as a set of bullet points, add to your document and post to the discussion board under the &quot;Sequence Retrieval&quot; thread. If others have posted information about your gene, have a look at what they have posted
+            and compare with your own data.</p>
+        <h2 id="download-related-sequences">Download Related Sequences</h2>
+        <p>Find the accession ID for a protein sequence corresponding to your chosen gene from the human or another well-annotated species. Using this annotation, go to <a href="https://blast.ncbi.nlm.nih.gov/">NCBI&#39;s BLAST server</a> and use BLASTP
+            to search the refseq_protein db for closely matching sequences.</p>
+        <p>Pick sequences from ~15 species. Using the checkboxes choose some sequences from species closely related to the query species (e.g., if query is human protein, choose some primate sequences), but also some that are more distant (e.g., a rodent,
+            an invertebrate). Taxonomy resources can be found <a href="https://www.ncbi.nlm.nih.gov/taxonomy">at NCBI</a> or at the <a href="http://tolweb.org/tree/">Tree of Life Project</a>.</p>
+        <p>With your sequence selected, use the &quot;Download&quot; link in the &quot;Descriptions&quot; section of your BLAST output to download the following:</p>
+        <ul>
+            <li>a hit table of your chosen sequences,</li>
+            <li>their complete sequences.</li>
+        </ul>
+        <p>Format the hit table for your results document. Examine the FASTA file using a your text editor (e.g., Notepad++).</p>
+        <p>Read about the FASTA format <a href="https://en.wikipedia.org/wiki/FASTA_format">at the Wikipedia page</a>.</p>
+        <p>Edit the description lines in your FASTA file to give just the names of the species (in English or the Latin binomial). Avoid space characters (you can use _ instead). Give the FASTA file itself a sensible name, e.g., &quot;Genename_annotated.fasta&quot;.
+            (Note that you are deleting important information here, but you have the accession numbers stored in the hit table so you are good).</p>
+        <h2 id="alignment">Alignment</h2>
+        <p>Now it&#39;s time to use your FASTA file to carry out a multiple sequence (and species) alignment (MSA). Many MSA tools exist, but a great selection is maintained at <a href="http://www.ebi.ac.uk/Tools/msa/">EMBL-EBI&#39;s MSA page</a>.</p>
+        <p>Launch MUSCLE and load in your FASTA file. Set it running to generate an alignment. You may wish to refresh your memory about how alignments can be calculated by looking at my lectures (key concepts: local vs. global, progressive).</p>
+        <p>When you get your results keep open this page tab also, download the alignment file using the button. You may be taken to a text only page or an instant download depending on your browser&#39;s behaviour. In any case, get the output into a file.
+            This is still a FASTA file but it contains pads/spaces in the sequences. Name this something like &quot;Genename_msa.fasta&quot;.</p>
+        <h2 id="curating-your-alignment">Curating Your Alignment</h2>
+        <p>The aim here is to trim poorly aligned regions. This usually takes place at the ends of an alignment where typical algorithms struggle. This task can be carried out by hand or using a program called Gblocks. Let&#39;s try Gblocks. There are several
+            online versions, but let&#39;s try <a href="http://phylogeny.lirmm.fr/phylo_cgi/one_task.cgi?task_type=gblocks">the version linked here</a> (note that this server can provide an entire workflow similar to ours – feel free to explore – but
+            I find it too clunky overall).</p>
+        <p>Submit your MUSCLE-aligned FASTA file. When the run is complete download the &quot;cured&quot; alignment in FASTA format from the Outputs section. Name this something like &quot;Genename_cured_msa.fasta&quot;.</p>
+        <h2 id="presenting-your-alignment">Presenting Your Alignment</h2>
+        <p>Going back to the EMBL-EBI tools page above, launch MView and submit your cured alignment. This display colours for conservation. Go ahead and download this file and add it to your report document. You may need to choose a fixed width font such
+            as <code>Courier New</code> to maintain the spacing in the alignment view. In the worst case, you can take a screenshot, but try to avoid that.</p>
+        <h2 id="creating-a-phylogeny">Creating a Phylogeny</h2>
+        <p>Go back to the MUSCLE results page which you kept open above and click the &quot;Send to ClustalW2_Phylogeny&quot; button. If you&#39;ve lost that page, launch <a href="https://www.ebi.ac.uk/Tools/phylogeny/">ClustalW2Phylogeny</a> again and submit
+            your alignment.</p>
+        <p>While this is working you can take a chance to learn a bit about phylogenetic methods. A <a href="http://www.scq.ubc.ca/introduction-to-phylogenetics/">basic introduction can be found here</a> (start at &quot;Tree construction methods&quot;).
+            For a maths-heavy overview see <a href="https://www.stat.wisc.edu/courses/st992-newton/smmb/files/phylogeny/phylogeny-4.pdf">this course page</a>. An especially detailed page may be found by looking at the lecture <a href="http://homes.cs.washington.edu/~ruzzo/courses/gs559/09wi/">on this course</a>            dealing with and titled &quot;Phylogeny&quot;.</p>
+        <p>When the phylogeny program has completed take a look at the cladogram and the &quot;real&quot; phylogeny. Next, download the tree file which is in Newick format and give it a sensible name, e.g., &quot;Genename_tree.nwk&quot;. Take a look at the
+            Newick format <a href="https://en.wikipedia.org/wiki/Newick_format">page on Wikipedia</a>. More detail about the specification can also be found <a href="http://evolution.genetics.washington.edu/phylip/newicktree.html">at this page</a>.</p>
+        <h2 id="visualizing-your-tree">Visualizing Your Tree</h2>
+        <p>Let&#39;s use another program to get a flexible visualization of your tree. Go to the <a href="http://itol.embl.de/upload.cgi">interactive Tree of Life&#39;s upload site</a> and upload your Newick-formatted file. When it&#39;s finished processing
+            explore the display options. When you are happy with your image choose the &quot;Export&quot; tab and select an appropriate format (PNG is pretty easy across platforms, unless you want to change resolution/play with vector graphics).</p>
+        <p>Add this image to your report.</p>
+        <h2 id="questions-to-consider">Questions to Consider</h2>
+        <p>You will probably want to add some notes to your report to connect all the information. In that context you can consider some questions.</p>
+        <p>The difference between a cladogram and a phylogenetic tree relates to branch lengths.</p>
+        <ul>
+            <li>What determines branch length?</li>
+            <li>What is the difference between a rooted and an unrooted tree?</li>
+            <li>Which do you think is more appropriate?</li>
+        </ul>
+</body>
+
+</html>
