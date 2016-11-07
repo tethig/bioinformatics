@@ -1,3 +1,6 @@
+---
+title: Sequence Retrieval & Alignment
+---
 # BIOL33221 Sequence Retrieval and Alignment
 
 This *formative* exercise includes production of a short report.
