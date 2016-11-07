@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence Retrieval and Alignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Bioinformatics</h1>
+        <h2 class="project-tagline">Dr Dickins Bioinformatics Teaching</h2>
+        <a href="https://github.com/tethig/bioinformatics" class="btn">View on GitHub</a>
+        <a href="https://github.com/tethig/bioinformatics/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/tethig/bioinformatics/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+        <h1>
+<a id="biol33221-genome-browsers" class="anchor" href="#biol33221-genome-browsers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BIOL33221 Genome Browsers</h1>
+        <h2 id="mystery-sequence">Mystery Sequence</h2>
+        <p>Download and save the mystery sequence <a href="mystery.fa">linked here</a>.</p>
+        <h2 id="search-a-genome-database">Search a Genome Database</h2>
+        <p>Recall (and perhaps look again) at my lecture on databases. In a moment, we are going to search a genome-scale database using the mystery sequence. The take home point here is that these types of database integrate and display large quantities
+            of information, derived manually and using algorithms, that is used to <em>annotate</em> sequences at the level of the genome.</p>
+        <p>My lecture introduced the <a href="http://www.ensembl.org/">Ensembl Genome Browser</a>, but let&#39;s look first at one of its rivals, the UCSC (University of California at Santa Cruz) Genome Browser, the European mirror site for which can be
+            found <a href="http://genome-euro.ucsc.edu">at this page</a>.</p>
+        <p>From the UCSC Genome Browser homepage launch a BLAT search. Read the BLAT landing page to learn a little bit about what this algorithm does and how it differs from BLAST. When you&#39;re reading paste in your nucleotide sequence and search the
+            human genome (hg38). (If you are wondering what the <em>hg38</em> means, scroll down <a href="http://genome-euro.ucsc.edu/cgi-bin/hgGateway">this page</a> and read about genome releases).</p>
+        <p>Browse the top scoring alignment (if you weren&#39;t feeling lucky). <em>Can you identify the gene?</em></p>
+        <p>I also <em>strongly</em> recommend keeping this tab open.</p>
+        <h2 id="-optional-try-the-ensembl-genome-browser">(Optional) Try the Ensembl Genome Browser</h2>
+        <p>Try the same BLAT search using the the <a href="http://www.ensembl.org/">Ensembl Genome Browser</a>. Do you get the same answer?</p>
+        <h2 id="exploring-genome-tracks-">Exploring Genome &quot;Tracks&quot;</h2>
+        <p>Go back to UCSC page. Let&#39;s take a closer look at the graphics. Each <em>row</em> in the figure is a <em>track</em> showing some information about the sequence (from gene locations to comparisons with other sequences). See if you can find
+            the following tracks and expand them to the &quot;full&quot; view:</p>
+        <ul>
+            <li><a href="http://www.gencodegenes.org">GENCODE</a> (gene annotation from the <a href="https://www.encodeproject.org">ENCODE</a> project)</li>
+            <li>RefSeq genes (recall from the previous workshops)</li>
+            <li>Conservation (derived from multiple alignment)</li>
+            <li><a href="http://omim.org">OMIM</a> (Online Mendelian Inheritance in Man)</li>
+            <li>SNPs</li>
+            <li>RepeatMasker</li>
+        </ul>
+        <p><em>Hint: you can use the options below the graphic + refresh buttons or right click on the tabs to the left.</em></p>
+        <p>Let&#39;s look in detail at the last two tracks indicated above, which may be less familiar, and see what kind of data they are displaying. You may also find <a href="https://www.genome.ucsc.edu/goldenPath/help/hgTracksHelp.html">this site</a>            helpful.</p>
+        <h2 id="snps-single-nucleotide-polymorphisms">SNPs: Single-Nucleotide Polymorphisms</h2>
+        <p>If you don&#39;t know what a SNP is, <a href="https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism">look at the Wikipedia page</a> and remind yourself of the <a href="https://en.wikipedia.org/wiki/Point_mutation#Functional_categorization">different functional categories of point mutation</a>.
+            The reference database for SNPs is called dbSNP and can be found via this <a href="https://www.ncbi.nlm.nih.gov/SNP/">NCBI portal</a>. This can give you information about the frequencies of a SNP in different populations. Although not as comprehensive
+            right now, there is also a site called <a href="http://www.snpedia.com/">SNPedia</a> for crowd-sourcing information about SNPs.</p>
+        <p>Let&#39;s see if we can identify a functionally significant SNP in our gene. First, make sure you have the &quot;full&quot; view of SNPs displayed. Next scroll down to the Variation section below the graphical display and click on the &quot;Common
+            SNPs&quot; link. Learn about the &quot;Coloring Options&quot; (yes, it&#39;s a perfect mirror of an American website).</p>
+        <p>Armed with this information let&#39;s pick out an interesting SNP. Go back to the main display and select the only red SNP that you can see (rs61740803). Take a look at the information on this page and also click through to dbSNP. What kind of
+            SNP is this? Write down what effect this SNP has on the sequence of the (mystery) gene&#39;s protein product.</p>
+        <h2 id="repeats-and-repeatmasker">Repeats and RepeatMasker</h2>
+        <p>As described at <a href="http://repeatmasker.org">its homepage</a>, RepeatMasker is a program that identifies repeat sequences (commonly derived from transposons) using a database called Repbase (or Dfam, a Repbase-derived database enhanced using
+            a <a href="http://users-cs.au.dk/cstorm/courses/PRiB_f12/slides/hidden-markov-models-1.pdf">Hidden Markov Model</a>). It can be used to &quot;mask&quot; these sequences in order to exclude them from certain kinds of analysis, but it can also
+            be used to identify their positions and identities.</p>
+        <p>Although RepeatMasker makes use of an algorithm called <a href="http://tandem.bu.edu/trf/trf.html">Tandem Repeats Finder</a> to identify simple repeats, it is dependent on the database. (This is one good reason why you should record the version
+            of programs you use in analysis or at least the access data, if using online tools). Alternative methods exist that rely only on search algorithms, e.g., <a href="https://github.com/PollockLaboratory/pclouds">PClouds</a> which decomposes the
+            genome into short oligonucleotides, groups them (into &quot;clouds&quot;) and looks for those that are probably over-represented. This yields an estimate of <a href="http://dx.doi.org/10.1371/journal.pgen.1002384">&gt;2/3 of the human genome as consisting of repetitive elements</a>.
+            Methods that rely solely on algorithms, and not on prior information in databases, are called <em>de novo</em> methods.</p>
+        <p>Look again at the main UCSC display for the region identified by your BLAT search. Making sure that the RepeatMasker track is not squished (it is in &quot;full&quot; mode), identify the only repeat element that is <em>not</em> a simple repeat.
+            Answer these questions:</p>
+        <ul>
+            <li>What is it? Is it a microsatellite? Or is it a transposon?</li>
+            <li>Give a little more detail about this family of elements.</li>
+        </ul>
+        <p>You may find these references helpful if you want to know more about:</p>
+        <ul>
+            <li><a href="https://www.ncbi.nlm.nih.gov/pubmed/26912865">Retrotransposons</a></li>
+            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2167627/">DNA transposons</a></li>
+            <li><a href="http://dx.doi.org/10.1073/pnas.1102343108">Evolution of Repeat Elements</a></li>
+        </ul>
+        <p>Repeats and conservation data can be intersected. Repeats shared by a group of lineages are called ancestral repeats; those limited to a particular taxon are called lineage-specific repeats. A famous example of the latter are the <em>Alu</em>            elements <a href="http://dx.doi.org/10.1186/gb-2011-12-12-236">shared by primates</a>.</p>
+        <h2 id="further-exploration-of-the-mystery-gene">Further Exploration of the Mystery Gene</h2>
+        <p>OK, so you know what the gene is. Look it up on NCBI&#39;s <a href="https://www.ncbi.nlm.nih.gov/gene/">Gene db</a> and choose the human version of the gene. Navigating down to the graphic, hover over the gene until a context menu appears. This
+            gives you the option of downloading the protein sequence (beginning NP) or the RNA sequence (beginning NM), but instead look down and select &quot;FASTA View&quot; which gives you the genomic interval including the gene. In case you want to
+            check, <a href="https://www.ncbi.nlm.nih.gov/nuccore/NC_000017.11?report=fasta&amp;from=72121020&amp;to=72126420">this is what you should see</a>.</p>
+        <p>Look up to where it says &quot;Send&quot; with the down arrow. Click on this, select &quot;Complete Record&quot;, &quot;File&quot; and then choose FASTA as the format. Hit the &quot;Create File&quot; button and your sequence will be downloaded.
+            Rename it if you wish (I called mine &quot;interval.fa&quot;). It should open in your preferred text editor and you will see a standard FASTA file with the header line indicating the chromosome coordinates. From now on, I will refer to this
+            as your interval sequence file.</p>
+        <p>Go to the <a href="http://repeatmasker.org">RepeatMasker homepage</a> and choose RepeatMasking under Services. Input your interval sequence file and run with default parameters. <em>What kinds of repeat can you see? Click through and save the Annotation file.</em></p>
+        <p>Yes, you are not wrong, you cannot find that repeat. What&#39;s going on? Do you recall above I mentioned about versions of programs? Look at the version of RMLib used by the web-based tool (on the <a href="http://repeatmasker.org/cgi-bin/WEBRepeatMasker">submission page</a>).
+            Compare that to the <a href="https://genome.ucsc.edu/FAQ/FAQdownloads.html#download16">statement here</a>. Best practice in bioinformatic work is to download a local copy of RepeatMasker and the relevant database and use offline. Consider
+            yourself warned!</p>
+        <h2 id="gene-structure-prediction">Gene Structure Prediction</h2>
+        <p>Let&#39;s see if we can have more luck predicting gene structure using your interval sequence file. Obviously we could just refer to the annotation tracks on the UCSC or Ensembl Genome Browsers to see the current best information on the genes
+            present in this interval, but what if we had completely new sequence? Then we need to use a <em>ab initio</em> gene prediction method (see <a href="http://bioinformatica.upf.edu/P19/">this page</a> for a description of types of gene prediction).</p>
+        <p>Again some of the good software for gene prediction is best run stand-alone on your own (unix-based) box (see the <a href="https://en.wikipedia.org/wiki/List_of_gene_prediction_software">list of software here</a>. Let&#39;s have a go with GENSCAN.
+            Go the <a href="http://genes.mit.edu/GENSCAN.html">GENSCAN website</a> and run it with your interval file and default parameters.</p>
+        <p>You can see it has made some predictions. Scroll down and you will see it has predicted a polypeptide sequence. Copy this into a text file (yes, it&#39;s finicky -&gt; old site) and create a correctly formatted protein FASTA file. Give it a sensible
+            name (I called mine &quot;predicted.fa&quot;).</p>
+        <p>Go to <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI BLAST</a> and run a BLASTP search with the predicted sequence. Some questions for you:</p>
+        <ul>
+            <li>What did the BLASTP search recover?</li>
+            <li>Do you think GENSCAN made an accurate prediction?</li>
+            <li>Can you explain any deviations?</li>
+        </ul>
+        <h2 id="domain-search">Domain Search</h2>
+        <p>For completeness, you might also be interested in searching for domains in your protein of interest. Go to the <a href="http://pfam.xfam.org">Pfam homepage</a> and carry out a sequence search using your predicted protein sequence. <em>What do you see?</em></p>
+        <h2 id="coda-other-resources">Coda: Other Resources</h2>
+        <p>OK, that&#39;s it for these workshops. Of course we&#39;ve only scratched the surface.</p>
+        <p>There are so many more programs and databases out there. For example, in alignments you can use <a href="https://www.ncbi.nlm.nih.gov/sutils/splign/splign.cgi">this program</a> to align mRNA to genomic DNA (a challenging thing to do) and many
+            new methods exist for handling next-generation sequencing data.</p>
+        <p>Many excellent stand-alone programs exist for phylogeny reconstruction (e.g., <a href="http://beast.bio.ed.ac.uk">BEAST</a>, <a href="http://mrbayes.sourceforge.net">MrBayes</a>, <a href="http://hyphy.org/w/index.php/Main_Page">HyPhy</a> and <a href="http://megasoftware.net">MEGA</a>) and again such approaches are recommended for obtaining the best results. However, as I hope you can see, there is a lot you can do with widely available, and free, web tools provided by the scientific community.</p>
+</body>
+
+</html>
