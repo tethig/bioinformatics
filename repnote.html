@@ -1,29 +1,59 @@
-<h1 id="biol33221-guidance-with-repeats">BIOL33221 Guidance with Repeats</h1>
-<h2 id="extracting-repeats-from-ucsc-repeatmasker-track">Extracting Repeats from UCSC RepeatMasker Track</h2>
-<p>A number of folk have encountered a problem in which the RepeatMasker track in the UCSC Genome Browser shows a very large number of transposable elements. This page will suggest a workaround for this problem.</p>
-<h2 id="access-ucsc-graphical-genome-browser">Access UCSC Graphical Genome Browser</h2>
-<p>Start by accessing your gene (paralog) using the <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTracks">UCSC Genome Browser</a>. You may not be aware whether you are using the main <a href="https://genome.ucsc.edu/cgi-bin/hgTracks">US-based site</a> or the <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTracks">European Mirror site</a>. You can check on this and move between these using the &quot;Mirror&quot; menu and it generally makes sense to use the closest site for efficiency.</p>
-<p>Note that in the top panel the view position is written in genome coordinates. It should look something like this:<br>chr11:31,788,910-31,817,961<br>depending on where your gene is located.</p>
-<p>The difficulty people are experiencing is the large number of SINEs, LINEs and so on in some regions making it difficult to prepare a table.</p>
-<h2 id="access-ucsc-table-browser">Access UCSC Table Browser</h2>
-<p>Open a new tab in your browser and visit the <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTables">UCSC <em>Table</em> Browser</a>. I have linked the European Mirror version there. Here is the <a href="https://genome.ucsc.edu/cgi-bin/hgTables">US Table link</a>.</p>
-<p>(If you take a look at the URL in your browser you will see that the Graphical Browser URL ends with <code>hgTracks</code> while the Table Browser URL ends with <code>hgTables</code>).</p>
-<h2 id="examine-the-table-interface">Examine the Table Interface</h2>
-<p>Looking now at the Table Browser page you should see that it has picked up the same location that you are viewing in the graphical version. (It might fail to do so if you are using different mirror sites or different browsers, etc. In that case manually enter the correct location via copy and paste).</p>
-<p>The Table Browser is essentially an alternative interface to the tracks displayed in the graphical version. For RepeatMasker data:</p>
-<ul>
-<li>under &quot;group:&quot;&quot; choose &quot;Repeats&quot;, then</li>
-<li>under &quot;track:&quot; choose &quot;RepeatMasker&quot;.</li>
-</ul>
-<p>At this point you can just hit the &quot;get output&quot; button and it should yield a list of repeats in the region indicated in position. This data can be copied into Microsoft Excel or other software for counting/manipulation.</p>
-<h2 id="going-a-step-further-gingerly-">Going a Step further (Gingerly)</h2>
-<p>It is also possible to look for intersections between tracks. For this:</p>
-<ul>
-<li>under &quot;intersection:&quot; hit the &quot;create&quot; button,</li>
-<li>under &quot;group:&quot; choose &quot;Genes and Gene Predictions&quot;,</li>
-<li>under &quot;track:&quot; choose &quot;RefSeq Genes&quot;,</li>
-<li>hit the &quot;submit&quot; button, then &quot;get output&quot; then &quot;get BED&quot;.</li>
-</ul>
-<p>You can explore these options further, <em>but</em>, if you are unlucky enough to have a very large number of repeats and overlaps, I am happy with you providing an overall summary (of numbers) and indicating whether overlap is present in answer to question 9.</p>
-<h2 id="question-9-clarification">Question 9: Clarification</h2>
-<p>I am just looking for some summary of the information available regarding repeats at your paralogous loci. Since repeat numbers will vary quite widely between gene sets I will not be expecting a comprehensive accounting of the coordinates of every repeat.</p>
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence Retrieval and Alignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+</head>
+
+<body>
+    <section class="page-header">
+        <h1 class="project-name">Bioinformatics</h1>
+        <h2 class="project-tagline">Dr Dickins Bioinformatics Teaching</h2>
+        <a href="https://github.com/tethig/bioinformatics" class="btn">View on GitHub</a>
+        <a href="https://github.com/tethig/bioinformatics/zipball/master" class="btn">Download .zip</a>
+        <a href="https://github.com/tethig/bioinformatics/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+        <h1>
+<a id="biol33221-guidance-with-repeats" class="anchor" href="#biol33221-genome-browsers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>BIOL33221 Guidance with Repeats</h1>
+        <h2 id="extracting-repeats-from-ucsc-repeatmasker-track">Extracting Repeats from UCSC RepeatMasker Track</h2>
+        <p>A number of folk have encountered a problem in which the RepeatMasker track in the UCSC Genome Browser shows a very large number of transposable elements. This page will suggest a workaround for this problem.</p>
+        <h2 id="access-ucsc-graphical-genome-browser">Access UCSC Graphical Genome Browser</h2>
+        <p>Start by accessing your gene (paralog) using the <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTracks">UCSC Genome Browser</a>. You may not be aware whether you are using the main <a href="https://genome.ucsc.edu/cgi-bin/hgTracks">US-based site</a>            or the <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTracks">European Mirror site</a>. You can check on this and move between these using the &quot;Mirror&quot; menu and it generally makes sense to use the closest site for efficiency.</p>
+        <p>Note that in the top panel the view position is written in genome coordinates. It should look something like this:<br>chr11:31,788,910-31,817,961<br>depending on where your gene is located.</p>
+        <p>The difficulty people are experiencing is the large number of SINEs, LINEs and so on in some regions making it difficult to prepare a table.</p>
+        <h2 id="access-ucsc-table-browser">Access UCSC Table Browser</h2>
+        <p>Open a new tab in your browser and visit the <a href="http://genome-euro.ucsc.edu/cgi-bin/hgTables">UCSC <em>Table</em> Browser</a>. I have linked the European Mirror version there. Here is the <a href="https://genome.ucsc.edu/cgi-bin/hgTables">US Table link</a>.</p>
+        <p>(If you take a look at the URL in your browser you will see that the Graphical Browser URL ends with <code>hgTracks</code> while the Table Browser URL ends with <code>hgTables</code>).</p>
+        <h2 id="examine-the-table-interface">Examine the Table Interface</h2>
+        <p>Looking now at the Table Browser page you should see that it has picked up the same location that you are viewing in the graphical version. (It might fail to do so if you are using different mirror sites or different browsers, etc. In that case
+            manually enter the correct location via copy and paste).</p>
+        <p>The Table Browser is essentially an alternative interface to the tracks displayed in the graphical version. For RepeatMasker data:</p>
+        <ul>
+            <li>under &quot;group:&quot;&quot; choose &quot;Repeats&quot;, then</li>
+            <li>under &quot;track:&quot; choose &quot;RepeatMasker&quot;.</li>
+        </ul>
+        <p>At this point you can just hit the &quot;get output&quot; button and it should yield a list of repeats in the region indicated in position. This data can be copied into Microsoft Excel or other software for counting/manipulation.</p>
+        <h2 id="going-a-step-further-gingerly-">Going a Step further (Gingerly)</h2>
+        <p>It is also possible to look for intersections between tracks. For this:</p>
+        <ul>
+            <li>under &quot;intersection:&quot; hit the &quot;create&quot; button,</li>
+            <li>under &quot;group:&quot; choose &quot;Genes and Gene Predictions&quot;,</li>
+            <li>under &quot;track:&quot; choose &quot;RefSeq Genes&quot;,</li>
+            <li>hit the &quot;submit&quot; button, then &quot;get output&quot; then &quot;get BED&quot;.</li>
+        </ul>
+        <p>You can explore these options further, <em>but</em>, if you are unlucky enough to have a very large number of repeats and overlaps, I am happy with you providing an overall summary (of numbers) and indicating whether overlap is present in answer
+            to question 9.</p>
+        <h2 id="question-9-clarification">Question 9: Clarification</h2>
+        <p>I am just looking for some summary of the information available regarding repeats at your paralogous loci. Since repeat numbers will vary quite widely between gene sets I will not be expecting a comprehensive accounting of the coordinates of every
+            repeat.</p>
+</body>
+
+</html>
