@@ -1,4 +1,4 @@
-# BIOL33221 Mystery Sequence & Genome Browsers
+# Mystery Sequence & Genome Browsers
 
 ## Mystery Sequence
 Download and save the mystery sequence [linked here](mystery.fa).

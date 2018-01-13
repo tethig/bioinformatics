@@ -1,4 +1,4 @@
-# BIOL33221 Guidance with Repeats
+# Guidance with Repeats
 
 ## Extracting Repeats from UCSC RepeatMasker Track
 A number of folk have encountered a problem in which the RepeatMasker track in the UCSC Genome Browser shows a very large number of transposable elements. This page will suggest a workaround for this problem.

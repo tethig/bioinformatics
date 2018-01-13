@@ -1,4 +1,4 @@
-# Guidance with Repeats
+# Welcome
 
 Bioinformatics is a wide ranging term that covers many aspects of carrying out biological analyses in silico, i.e., on a computer
 
