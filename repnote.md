@@ -7,7 +7,9 @@ A number of folk have encountered a problem in which the RepeatMasker track in t
 Start by accessing your gene (paralog) using the [UCSC Genome Browser](http://genome-euro.ucsc.edu/cgi-bin/hgTracks). You may not be aware whether you are using the main [US-based site](https://genome.ucsc.edu/cgi-bin/hgTracks) or the [European Mirror site](http://genome-euro.ucsc.edu/cgi-bin/hgTracks). You can check on this and move between these using the "Mirror" menu and it generally makes sense to use the closest site for efficiency.
 
 Note that in the top panel the view position is written in genome coordinates. It should look something like this:
+```
 chr11:31,788,910-31,817,961
+```
 depending on where your gene is located.
 
 The difficulty people are experiencing is the large number of SINEs, LINEs and so on in some regions making it difficult to prepare a table.
