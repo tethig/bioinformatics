@@ -75,7 +75,7 @@ Submit your MUSCLE-aligned FASTA file. When the run is complete download the "cu
 
 
 ## Presenting Your Alignment
-Going back to the EMBL-EBI tools page above, launch MView and submit your cured alignment. This display colours for conservation. Go ahead and download this file and add it to your report document. You may need to choose a fixed width font such as ```Courier New``` to maintain the spacing in the alignment view. In the worst case, you can take a screenshot, but try to avoid that.
+Going back to the EMBL-EBI tools page above, launch MView and submit your cured alignment. This display colours for conservation. Go ahead and download this file and add it to your report document. You may need to choose a fixed width font such as ```Courier New``` (for font nerds [here are some others](https://itnext.io/11-best-programming-fonts-724283a9ed57)) to maintain the spacing in the alignment view. In the worst case, you can take a screenshot, but try to avoid that.
 
 
 ## Creating a Phylogeny
